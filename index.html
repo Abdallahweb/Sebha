@@ -13,7 +13,12 @@
                 $(".count").text(0)
             })), $(document).ready((function() {
                 $(".start").click((function() {
-                    $(".count").eq($i).slideDown(1e3), $(".count").eq($i - 1).slideUp(1e3), $i <= 100 && ($(".add").next().addClass("add"), $(".add").next().addClass("add"), $("#zero").slideUp(1e3), $(".count").eq($i).slideDown(1e3), $(".count").eq($i - 1).slideUp(1e3), $(".count").removeClass("add"), $(".count").text($i++ + " تسبيحة"))
+                    $(".count").eq($i).slideDown(1e3), 
+                     $i <= 100 && ($(".add").next().addClass("add"), 
+                     $(".add").next().addClass("add"), 
+                     $("#zero").slideUp(1e3), 
+                      $(".count").removeClass("add"), 
+                      $(".count").text($i++ + " تسبيحة"))
                 }))
             })), $(document).ready((function() {
                 $(".reload").click((function() {
