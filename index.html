@@ -269,8 +269,14 @@
         const circles = document.querySelectorAll(".circles");
 
         function updateCounter() {
-            $("#zero").text(count + " " + "تسبيحه");
+            if(count == 0){
+                            $("#zero").text(count);
 
+            }
+else{
+                $("#zero").text(count + " " + "تسبيحه");
+
+}
             circles.forEach((circle, index) => {
                 if (index < count) {
                     circle.classList.add("add");
