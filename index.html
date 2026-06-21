@@ -20,23 +20,30 @@
         }
 
         body {
-            background-image: linear-gradient(to right, rgba(12, 3, 66, 0.92), 70%, rgba(146, 8, 72, 0.92)), url(./back.jpg);
+            background: radial-gradient(circle at right,rgba(146, 8, 72, 0.92), 30%,  rgba(12, 3, 66, 0.92)), url(./back.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             height: 100vh;
             direction: rtl;
-            padding: 0 50px;
+            padding: 30px 50px;
             margin: 0;
             overflow: hidden;
         }
 
+        .container{
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+
+        }
         .header-container {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 15px;
-            margin-top: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .heading {
@@ -212,12 +219,12 @@
 
 <body>
 
+    <div class="container">
     <div class="header-container">
         <img src="./sebha.png" class="img" alt="Sebha">
         <h1 class="heading">المسبحه</h1>
     </div>
 
-    <hr>
 
     <div class="sebha-container" id="sebhaContainer"></div>
 
@@ -228,7 +235,10 @@
 
     <div id="zero">0</div>
 
-    <div class="developer">
+   
+</div>
+
+ <div class="developer">
         <h6>
             تم تطويره بواسطة :
             <a href="https://abdallahweb.github.io/resume/" target="_blank">
@@ -236,7 +246,6 @@
             </a>
         </h6>
     </div>
-
     <script>
         const maxTasbeeh = 100;
         let count = 0;
