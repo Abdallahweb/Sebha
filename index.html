@@ -46,6 +46,7 @@
             gap: 15px;
             margin-top: 10px;
             margin-bottom: 20px;
+            padding-top: 10px;
         }
 
         .heading {
@@ -100,7 +101,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .start {
@@ -157,7 +158,7 @@
             width: 100%;
             left: 50%;
             transform: translateX(-50%);
-            bottom: 15px;
+            bottom: 0px;
         }
 
         .developer h6 {
@@ -178,6 +179,16 @@
             body {
                 padding: 0 20px;
             }
+
+                    .container{
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            height: auto;
+            padding: 0px 20px;
+        box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.13);
+
+                    }
             .heading {
                 font-size: 35px;
             }
@@ -190,7 +201,7 @@
                 margin: 5px;
             }
             .buttons {
-                margin-top: 40px;
+                margin-top: 150px;
             }
             #zero {
                 font-size: 35px;
@@ -205,7 +216,7 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 10px;
-                margin-top: 20px;
+                margin-top: 150px;
             }
             .start, .reload {
                 width: 80%;
@@ -285,7 +296,7 @@
 
         updateCounter();
     </script>
-
+ 
     <script src="query.js"></script>
     <script>
         document.onkeydown = function (e) {
