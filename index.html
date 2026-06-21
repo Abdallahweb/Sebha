@@ -2,417 +2,294 @@
 <html lang="ar" dir="rtl">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>المسبحه الإلكترونية</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>المسبحه الإلكترونية</title>
 
-<link rel="icon" type="image/x-icon" href="./sebha.png">
+    <link rel="icon" type="image/x-icon" href="./sebha.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/earlyaccess/amiri.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/amiri.css" rel="stylesheet">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-<style>
+    <style>
+        * {
+            font-family: Amiri, serif;
+            box-sizing: border-box;
+        }
 
-*{
-    font-family: Amiri, serif;
-    box-sizing: border-box;
-}
+        body {
+            background-image: linear-gradient(to right, rgba(12, 3, 66, 0.92), 70%, rgba(146, 8, 72, 0.92)), url(./back.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            direction: rtl;
+            padding: 0 50px;
+            margin: 0;
+            overflow: hidden;
+        }
 
-body{
-background-image:linear-gradient(to right,rgba(12, 3, 66, 0.89),70%,#920848de),url(./back.jpg);
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-    height: 100vh;
-    direction: rtl;
-    padding: 0 50px;
-    margin: 0;
-    overflow: hidden;
-}
+        .header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
 
-.heading{
-    color:#f1eeee;text-align:center;font-size:50px;
-}
-.img{
-    width:150px;margin-right:10px
-}
-.start{
-    width: 200px;
-    background: rgba(33, 4, 114, 0.5);
-    backdrop-filter: blur(20px);
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 27px;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    margin: 20px;
-    padding: 5px;
-    
-}
+        .heading {
+            color: #f1eeee;
+            text-align: center;
+            font-size: 50px;
+            margin: 0;
+        }
 
-.start:hover{
-    box-shadow:inset 0 0 14px #fff;
-}
+        .img {
+            width: 70px;
+            height: auto;
+            object-fit: contain;
+        }
 
-.reload{
-    width: 200px;
-    background-color: #e4030348;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 27px;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    margin: 20px;
-}
+        hr {
+            border: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
 
-.reload:hover{
-    box-shadow:inset 0 0 14px #fff;
-}
+        .sebha-container {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-.circles{
-    background: transparent;
-    backdrop-filter: blur(20px);
-    width: 27px;
-    height: 27px;
-    margin: 0px 10px;
-    border-radius: 999px;
-    border: 1px solid #ffffff88;
-}
+        .circles {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            width: 27px;
+            height: 27px;
+            margin: 5px 10px;
+            border-radius: 999px;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
 
-.add{
-    background-image: linear-gradient(200deg,#ffffff 0%,transparent 90%);
-    box-shadow:inset 0 0 4px #fff;
-    border: none;
-}
+        .add {
+            background-image: linear-gradient(200deg, #ffffff 0%, transparent 90%);
+            box-shadow: inset 0 0 8px #fff;
+            border: none;
+            border-color: transparent;
+        }
 
-#zero,
-.count{
-    color: #fff;
-    font-size: 50px;
-    margin: auto;
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    padding-bottom: 30px;
-}
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
 
-.buttons{
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-}
+        .start {
+            width: 200px;
+            background: rgba(33, 4, 114, 0.7);
+            backdrop-filter: blur(20px);
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 27px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 999px;
+            padding: 8px;
+            transition: all 0.3s ease;
+        }
 
-.sebha-container{
-    width: 100%;
-    height: 200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
+        .start:hover {
+            box-shadow: inset 0 0 14px #fff;
+            background: rgba(33, 4, 114, 0.9);
+        }
 
-.developer{
-    z-index: 999;
-    position: absolute;
-    text-align: center;
-    width: 200px;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 1px;
-}
+        .reload {
+            width: 150px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: normal;
+            cursor: pointer;
+            font-size: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
 
-.developer h6,
-.developer a{
-    color: #fff;
-    text-decoration: none;
-}
+        .reload:hover {
+            background-color: rgba(228, 3, 3, 0.3);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+        }
 
-@media (max-width:750px) {
+        #zero,
+        .count {
+            color: #fff;
+            font-size: 50px;
+            margin: 15px auto 0 auto;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+        }
 
-.heading{
-    color:#f1eeee;text-align:center;font-size:30px;
-}
-.img{
-    width:70px;margin-right:10px
-}
-.start{
-    width: 200px;
-    background: rgba(33, 4, 114, 0.5);
-    backdrop-filter: blur(20px);
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 27px;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    margin: 20px;
-    padding: 5px;
-}
+        .developer {
+            z-index: 999;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 15px;
+        }
 
-.start:hover{
-    box-shadow:inset 0 0 14px #fff;
-}
+        .developer h6 {
+            margin: 0;
+            font-family: 'Noto Kufi Arabic', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.6);
+        }
 
-.reload{
-    width: 200px;
-    background-color: #e4030348;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 27px;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    margin: 20px;
-}
+        .developer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.reload:hover{
-    box-shadow:inset 0 0 14px #fff;
-}
+        @media (max-width: 750px) {
+            body {
+                padding: 0 20px;
+            }
+            .heading {
+                font-size: 35px;
+            }
+            .img {
+                width: 50px;
+            }
+            .circles {
+                width: 18px;
+                height: 18px;
+                margin: 5px;
+            }
+            .buttons {
+                margin-top: 40px;
+            }
+            #zero {
+                font-size: 35px;
+            }
+            .developer {
+                display: none;
+            }
+        }
 
-.circles{
-    background: transparent;
-    backdrop-filter: blur(20px);
-    width: 17px;
-    height: 17px;
-    margin: 10px 5px;
-    border-radius: 999px;
-    border: 1px solid #ffffff88;
-}
-
-.add{
-       background-image: linear-gradient(200deg,#ffffff 0%,transparent 90%);
-    box-shadow:inset 0 0 4px #fff;
-    border: none;
-}
-
-#zero,
-.count{
-    color: #fff;
-    font-size: 40px;
-    margin: auto;
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    padding-top: 5px;
-    padding-bottom: 30px;
-}
-
-.buttons{
-    display: flex;
-    justify-content: center;
-        margin-top: 220px;
-        outline: none;
-
-}
-
-.sebha-container{
-    width: 100%;
-    height: 150px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.developer{
-display:none}
-
-}
-@media (max-width:576px) {
-  
-.heading{
-    color:#f1eeee;text-align:center;font-size:30px;
-}
-.img{
-    width:70px;margin-right:10px
-}
-.start{
-    width: 200px;
-    background: rgba(33, 4, 114, 0.5);
-    backdrop-filter: blur(20px);
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 27px;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    margin: 20px;
-    padding: 5px;
-}
-
-.start:hover{
-    box-shadow:inset 0 0 14px #fff;
-}
-
-.reload{
-    width: 200px;
-    background-color: #e4030348;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 27px;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    margin: 20px;
-}
-
-.reload:hover{
-    box-shadow:inset 0 0 14px #fff;
-}
-
-.circles{
-    background: transparent;
-    backdrop-filter: blur(20px);
-    width: 17px;
-    height: 17px;
-    margin: 10px 5px;
-    border-radius: 999px;
-    border: 1px solid #ffffff88;
-}
-
-.add{
-        background-image: linear-gradient(200deg,#ffffff 0%,transparent 90%);
-    box-shadow:inset 0 0 4px #fff;
-    border: none;
-}
-
-#zero,
-.count{
-    color: #fff;
-    font-size: 40px;
-    margin: auto;
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    padding-top: 5px;
-    padding-bottom: 30px;
-}
-
-.buttons{
-    display: flex;
-    justify-content: center;
-    margin-top: 260px;
-    outline: none;
-}
-
-.sebha-container{
-    width: 100%;
-    height: 150px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.developer{
-display:none}
-
-
-
-}
-</style>
+        @media (max-width: 576px) {
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-top: 20px;
+            }
+            .start, .reload {
+                width: 80%;
+                max-width: 250px;
+                margin: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div style="display:flex;justify-content:center;align-items:center;">
-    <h1 class="heading">
-        المسبحه
-    </h1>
+    <div class="header-container">
+        <img src="./sebha.png" class="img" alt="Sebha">
+        <h1 class="heading">المسبحه</h1>
+    </div>
 
-    <img src="./sebha.png"
-         class="img"
-         alt="Sebha">
-</div>
+    <hr>
 
-<hr>
+    <div class="sebha-container" id="sebhaContainer"></div>
 
-<div class="sebha-container" id="sebhaContainer">
-</div>
+    <div class="buttons">
+        <button class="start">تسبيح</button>
+        <button class="reload">إعادة</button>
+    </div>
 
-<div class="buttons">
-    <button class="start">تسبيح</button>
-    <button class="reload">إعادة</button>
-</div>
+    <div id="zero">0</div>
 
-<div id="zero">0</div>
+    <div class="developer">
+        <h6>
+            تم تطويره بواسطة :
+            <a href="https://abdallahweb.github.io/resume/" target="_blank">
+                عبدالله فؤاد
+            </a>
+        </h6>
+    </div>
 
-<div class="developer">
-    <h6>
-        تم تطويره بواسطة :
-        <a href="https://abdallahweb.github.io/resume/">
-            عبدالله فؤاد
-        </a>
-    </h6>
-</div>
+    <script>
+        const maxTasbeeh = 100;
+        let count = 0;
 
-<script>
+        const container = document.getElementById("sebhaContainer");
 
-const maxTasbeeh = 100;
-let count = 0;
-
-const container = document.getElementById("sebhaContainer");
-
-for(let i = 0; i < maxTasbeeh; i++){
-
-    const circle = document.createElement("div");
-    circle.className = "circles";
-
-    container.appendChild(circle);
-}
-
-const circles = document.querySelectorAll(".circles");
-
-function updateCounter(){
-
-    $("#zero").text(count  + " " + "تسبيحه");
-
-    circles.forEach((circle,index)=>{
-
-        if(index < count){
-            circle.classList.add("add");
-        }else{
-            circle.classList.remove("add");
+        for (let i = 0; i < maxTasbeeh; i++) {
+            const circle = document.createElement("div");
+            circle.className = "circles";
+            container.appendChild(circle);
         }
 
-    });
-}
+        const circles = document.querySelectorAll(".circles");
 
-$(".start").on("click", function(){
+        function updateCounter() {
+            $("#zero").text(count + " " + "تسبيحه");
 
-    if(count >= maxTasbeeh) return;
+            circles.forEach((circle, index) => {
+                if (index < count) {
+                    circle.classList.add("add");
+                } else {
+                    circle.classList.remove("add");
+                }
+            });
+        }
 
-    count++;
-    updateCounter();
+        $(".start").on("click", function () {
+            if (count >= maxTasbeeh) return;
+            count++;
+            updateCounter();
+        });
 
-});
+        $(".reload").on("click", function () {
+                count = 0;
+                updateCounter();
+            }
+        );
 
-$(".reload").on("click", function(){
+        updateCounter();
+    </script>
 
-    count = 0;
-    updateCounter();
-
-});
-
-updateCounter();
-
-</script>
-
-<script src="query.js"></script>
-<script>
-document.onkeydown = function(e) {
-return !e.ctrlKey || 67 !== e.keyCode && 86 !== e.keyCode && 85 !== e.keyCode && 117 !== e.keyCode
-}, $(document).keypress("u", function(e) {
-return !e.ctrlKey
-}), document.addEventListener("contextmenu", function(e) {
-e.preventDefault()
-}, !1), $(document).keydown(function(e) {
-return 123 != e.keyCode && ((!e.ctrlKey || !e.shiftKey || 73 != e.keyCode) && void 0)
-})
-</script> 
+    <script src="query.js"></script>
+    <script>
+        document.onkeydown = function (e) {
+            return !e.ctrlKey || 67 !== e.keyCode && 86 !== e.keyCode && 85 !== e.keyCode && 117 !== e.keyCode
+        }, $(document).keypress("u", function (e) {
+            return !e.ctrlKey
+        }), document.addEventListener("contextmenu", function (e) {
+            e.preventDefault()
+        }, !1), $(document).keydown(function (e) {
+            return 123 != e.keyCode && ((!e.ctrlKey || !e.shiftKey || 73 != e.keyCode) && void 0)
+        })
+    </script>
 </body>
+
 </html>
