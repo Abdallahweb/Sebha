@@ -127,7 +127,7 @@
 
         .reload {
             width: 200px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(228, 3, 3, 0.3);
             backdrop-filter: blur(20px);
             color: rgba(255, 255, 255, 0.8);
             font-weight: normal;
@@ -294,6 +294,8 @@ else{
             if (count >= maxTasbeeh) return;
             count++;
             updateCounter();
+          new Audio('./click.mp3').play()
+
         });
 
         $(".reload").on("click", function () {
